@@ -132,3 +132,6 @@ curl --request GET 'afdd280786c3c4a06b72d24bba0917cd-647578602.us-east-2.elb.ama
 
 
 # external IP url: afdd280786c3c4a06b72d24bba0917cd-647578602.us-east-2.elb.amazonaws.com
+
+
+aws ssm put-parameter --name JWT_SECRET --overwrite --value "myucicdvtsk" --type SecureString
