@@ -15,8 +15,12 @@ The app relies on a secret set as the environment variable `JWT_SECRET` to produ
 
 __env_file__
 .env_file
-LOG_LEVEL=INFO
+LOG_LEVEL='INFO'
 JWT_SECRET='myucicdvtsk'
+TEST_SECRET='TestSecret'
+TEST_TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjEzMDY3OTAsIm5iZiI6MTU2MDA5NzE5MCwiZW1haWwiOiJ3b2xmQHRoZWRvb3IuY29tIn0.IpM4VMnqIgOoQeJxUbLT-cRcAjK41jronkVrqRLFmmk'
+TEST_EMAIL='wolf@thedoor.com'
+TEST_PASSWORD='huff-puff'
 
 ## Prerequisites
 
