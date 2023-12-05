@@ -57,3 +57,8 @@ artifacts:
 env:
   parameter-store:         
     JWT_SECRET: JWT_SECRET
+    TEST_SECRET: TEST_SECRET
+    TEST_TOKEN: TEST_TOKEN
+    TEST_EMAIL: TEST_EMAIL
+    TEST_PASSWORD: TEST_PASSWORD
+
