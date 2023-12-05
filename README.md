@@ -121,3 +121,12 @@ curl --request GET 'http://127.0.0.1:8080/contents' -H "Authorization: Bearer ${
 `code /System/Volumes/Data/private/tmp/aws-auth-patch.yml`
 `kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"`
 
+## Test Endpoints
+`kubectl get services simple-jwt-api -o wide`
+
+
+export TOKEN=`curl -d '{"email":"mmeqvtsk@gmail.com","password":"busbusbus"}' -H "Content-Type: application/json" -X POST ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+
+
+# external IP url: ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com   
