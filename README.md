@@ -86,3 +86,38 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson.
+
+
+eksctl create cluster --name eksctl-demo --nodes=2 --version=1.28 --instance-types=t2.medium --region=us-east-2
+
+aws cloudformation create-stack  --stack-name myStack2 --region us-east-2 --template-body file://template_EC2.yml --parameters file://my_parameters.json
+
+
+export TOKEN=`curl -d '{"email":"mmrvtsk@email.com","password":"busbusbus"}' -H "Content-Type: application/json" -X POST localhost:8080/auth | jq -r '.token'`
+curl --request GET 'http://127.0.0.1:8080/contents' -H "Authorization: Bearer ${TOKEN}" | jq .
+
+
+## Docker
+`.env_file`
+`docker build -t myimage .`
+`docker run --name myContainer --env-file=.env_file -p 80:8080 myimage`
+
+
+## EKS Cluster
+`kubectl version` __Client Version: v1.28.2__
+`eksctl create cluster --name simple-jwt-api --nodes=2 --version=1.28 --instance-types=t2.medium --region=us-east-2`
+`eksctl delete cluster simple-jwt-api  --region=us-east-2` __DELETE__
+
+`kubectl get nodes`
+
+## IAM Role
+`aws sts get-caller-identity --query Account --output text ` __507793166816__
+`aws iam create-role --role-name UdacityFlaskDeployCBKubectlRole --assume-role-policy-document file://trust.json --output text --query 'Role.Arn'`
+`aws iam put-role-policy --role-name UdacityFlaskDeployCBKubectlRole --policy-name eks-describe --policy-document file://iam-role-policy.json`
+
+
+## Authorize using EKS RBAC
+`kubectl get -n kube-system configmap/aws-auth -o yaml > /tmp/aws-auth-patch.yml`
+`code /System/Volumes/Data/private/tmp/aws-auth-patch.yml`
+`kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"`
+
