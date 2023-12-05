@@ -88,8 +88,6 @@ Completing the project involves several steps:
 For more detail about each of these steps, see the project lesson.
 
 
-eksctl create cluster --name eksctl-demo --nodes=2 --version=1.28 --instance-types=t2.medium --region=us-east-2
-
 aws cloudformation create-stack  --stack-name myStack2 --region us-east-2 --template-body file://template_EC2.yml --parameters file://my_parameters.json
 
 
@@ -129,4 +127,4 @@ export TOKEN=`curl -d '{"email":"mmeqvtsk@gmail.com","password":"busbusbus"}' -H
 curl --request GET 'ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
 
 
-# external IP url: ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com   
+# external IP url: ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com  
