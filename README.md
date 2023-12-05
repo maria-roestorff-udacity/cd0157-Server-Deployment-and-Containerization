@@ -123,8 +123,8 @@ curl --request GET 'http://127.0.0.1:8080/contents' -H "Authorization: Bearer ${
 `kubectl get services simple-jwt-api -o wide`
 
 
-export TOKEN=`curl -d '{"email":"mmeqvtsk@gmail.com","password":"busbusbus"}' -H "Content-Type: application/json" -X POST ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
-curl --request GET 'ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+export TOKEN=`curl -d '{"email":"mmeqvtsk@gmail.com","password":"busbusbus"}' -H "Content-Type: application/json" -X POST afdd280786c3c4a06b72d24bba0917cd-647578602.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'afdd280786c3c4a06b72d24bba0917cd-647578602.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
 
 
-# external IP url: 
+# external IP url: afdd280786c3c4a06b72d24bba0917cd-647578602.us-east-2.elb.amazonaws.com
