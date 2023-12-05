@@ -127,4 +127,4 @@ export TOKEN=`curl -d '{"email":"mmeqvtsk@gmail.com","password":"busbusbus"}' -H
 curl --request GET 'ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
 
 
-# external IP url: ae96ca0fd6b444c32900235a2a65d59b-1237173474.us-east-2.elb.amazonaws.com  
+# external IP url: 
